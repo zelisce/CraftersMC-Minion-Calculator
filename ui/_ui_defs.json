@@ -1,0 +1,7 @@
+{
+    "ui_defs": [
+        "ui/minion_calculator.json",
+        "ui/notes_screen.json",
+        "ui/utils_screen.json"
+    ]
+}

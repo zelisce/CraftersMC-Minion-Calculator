@@ -1,0 +1,45 @@
+{
+    "pause_screen_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_back",
+                "value": [
+                    {
+                        "utils_screen@utils_screen.main": {}
+                    },
+                    {
+                        "notation_screen_ons_d@notes.on_screen_display_screen": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "menu_background/button_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_back",
+                "value": [
+                    {
+                        "utils_padding@pause.vertical_padding": {}
+                    },
+                    {
+                        "utils@pause.utils_button": {}
+                    }
+                ]
+            }
+        ]
+    },
+    "utils_button@common_toggles.light_text_toggle": {
+        "$toggle_name": "none",
+        "$toggle_view_binding_name": "utils_screen_visibility",
+        "$button_text": "CraftersMC Utils",
+        "anchor_to": "top_middle",
+        "anchor_from": "top_middle",
+        "size": [
+            "100%",
+            "100%sm"
+        ]
+    }
+}

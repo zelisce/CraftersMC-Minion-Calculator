@@ -1,0 +1,132 @@
+{
+    "namespace": "notes",
+    "main": {
+        "type": "panel",
+        "size": [
+            "200px",
+            "100%cm + 20px"
+        ],
+        "controls": [
+            {
+                "stack_panel": {
+                    "type": "stack_panel",
+                    "orientation": "vertical",
+                    "size": [
+                        "100% - 20px",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "text_field@common.multiline_text_edit_box": {
+                                "$text_box_name": "notes_field",
+                                "$text_edit_text_control": "notes",
+                                "$text_edit_box_label_anchor_point": "top_left",
+                                "max_length": 412,
+                                "size": [
+                                    "100%",
+                                    "130px"
+                                ]
+                            }
+                        }
+                        // {
+                        //     "first_padding": {
+                        //         "type": "panel",
+                        //         "size": [
+                        //             "0px",
+                        //             "10px"
+                        //         ]
+                        //     }
+                        // },
+                        // {
+                        //     "toggle_panel": {
+                        //         "type": "panel",
+                        //         "size": [
+                        //             "100%",
+                        //             "30px"
+                        //         ],
+                        //         "controls": [
+                        //             {
+                        //                 "notation_on_screen_display_toggle@common_toggles.light_text_toggle": {
+                        //                     "$toggle_name": "dev_override_xbox_sandbox",
+                        //                     "$toggle_view_binding_name": "notes_ons_display_visibility",
+                        //                     "$button_text": "Notes On Screen Display",
+                        //                     "size": [
+                        //                         "100% - 40px",
+                        //                         "100%"
+                        //                     ]
+                        //                 }
+                        //             }
+                        //         ]
+                        //     }
+                        // }
+                    ]
+                }
+            }
+        ]
+    },
+    "on_screen_display_screen": {
+        "type": "panel",
+        "controls": [
+            {
+                "draggable_container": {
+                    "type": "scrollbar_box",
+                    "draggable": "both",
+                    "layer": 20,
+                    "size": [
+                        "100%cm",
+                        "100%cm"
+                    ],
+                    "button_mappings": [
+                        {
+                            "from_button_id": "button.menu_select",
+                            "to_button_id": "button.menu_select",
+                            "mapping_type": "pressed",
+                            "button_up_right_of_first_refusal": true
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "notes",
+                            "source_property_name": "(not (#item_name = ''))",
+                            "target_property_name": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "panel": {
+                                "type": "image",
+                                "texture": "textures/ui/dialog_background_opaque",
+                                "size": [
+                                    "100%cm + 20px",
+                                    "100%cm + 20px"
+                                ],
+                                "controls": [
+                                    {
+                                        "label": {
+                                            "type": "label",
+                                            "text": "#notes",
+                                            "color": [
+                                                0.3,
+                                                0.3,
+                                                0.3
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_control_name": "notes",
+                                                    "source_property_name": "('§z' + #item_name)",
+                                                    "target_property_name": "#notes"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

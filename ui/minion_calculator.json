@@ -1,0 +1,645 @@
+{
+   "namespace": "minion_calculator",
+   "main": {
+      "type": "panel",
+      "size": [
+         "164px",
+         "100%cm + 20px"
+      ],
+      "controls": [
+         {
+            "stack_panel": {
+               "type": "stack_panel",
+               "orientation": "vertical",
+               "size": [
+                  "100%",
+                  "100%c"
+               ],
+               "controls": [
+                  {
+                     "minion_types_panel": {
+                        "type": "panel",
+                        "size": [
+                           "100%",
+                           "100%cm"
+                        ],
+                        "controls": [
+                           {
+                              "stack_panel": {
+                                 "type": "stack_panel",
+                                 "orientation": "horizontal",
+                                 "size": [
+                                    "100%c",
+                                    "100%cm"
+                                 ],
+                                 "controls": [
+                                    {
+                                       "farming_type_tab@minion_calculator.tab_template": {
+                                          "$index": 0,
+                                          "$toggle_name": "minion_type_tabs",
+                                          "$toggle_view_binding_name": "farming_type",
+                                          "$hover_text": "§eFarming",
+                                          "$texture_default": "textures/ui/minion_types/farming/icon.png",
+                                          "$texture_hover": "textures/ui/minion_types/farming/icon.png",
+                                          "$texture_pressed": "textures/ui/minion_types/farming/icon.png"
+                                       }
+                                    },
+                                    {
+                                       "mining_type_tab@minion_calculator.tab_template": {
+                                          "$index": 1,
+                                          "$toggle_name": "minion_type_tabs",
+                                          "$toggle_view_binding_name": "mining_type",
+                                          "$hover_text": "§7Mining",
+                                          "$texture_default": "textures/ui/minion_types/mining/default.png",
+                                          "$texture_hover": "textures/ui/minion_types/mining/default.png",
+                                          "$texture_pressed": "textures/ui/minion_types/mining/default.png"
+                                       }
+                                    }
+                                 ]
+                              }
+                           }
+                        ]
+                     }
+                  },
+                  {
+                     "first_padding": {
+                        "type": "panel",
+                        "size": [
+                           "0px",
+                           "10px"
+                        ]
+                     }
+                  },
+                  {
+                     "minion_collections_panel": {
+                        "type": "panel",
+                        "size": [
+                           "100%",
+                           "100%cm"
+                        ],
+                        "controls": [
+                           {
+                              "farming_types": {
+                                 "type": "stack_panel",
+                                 "orientation": "vertical",
+                                 "size": [
+                                    "100%cm",
+                                    "100%c"
+                                 ],
+                                 "bindings": [
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "farming_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#visible"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "farming_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#enabled"
+                                    }
+                                 ],
+                                 "controls": [
+                                    {
+                                       "first_row": {
+                                          "type": "stack_panel",
+                                          "orientation": "horizontal",
+                                          "size": [
+                                             "100%c",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "wheat_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 1,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "wheat_collection",
+                                                   "$hover_text": "§gWheat",
+                                                   "$texture_default": "textures/items/wheat.png",
+                                                   "$texture_hover": "textures/items/wheat.png",
+                                                   "$texture_pressed": "textures/items/wheat.png",
+                                                   "property_bag": {
+                                                      "#tier_1": 2880,
+                                                      "#tier_3": 3323
+                                                   }
+                                                }
+                                             },
+                                             {
+                                                "carrot_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 2,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "carrot_collection",
+                                                   "$hover_text": "§vCarrot",
+                                                   "$texture_default": "textures/items/carrot.png",
+                                                   "$texture_hover": "textures/items/carrot.png",
+                                                   "$texture_pressed": "textures/items/carrot.png"
+                                                }
+                                             },
+                                             {
+                                                "potato_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 3,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "potato_collection",
+                                                   "$hover_text": "§pPotato",
+                                                   "$texture_default": "textures/items/potato.png",
+                                                   "$texture_hover": "textures/items/potato.png",
+                                                   "$texture_pressed": "textures/items/potato.png"
+                                                }
+                                             },
+                                             {
+                                                "pumpkin_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 4,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "pumpkin_collection",
+                                                   "$hover_text": "§6Pumpkin",
+                                                   "$texture_default": "textures/ui/minion_types/farming/pumpkin/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/farming/pumpkin/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/farming/pumpkin/default.png"
+                                                }
+                                             },
+                                             {
+                                                "melon_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 5,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "melon_collection",
+                                                   "$hover_text": "§cMelon",
+                                                   "$texture_default": "textures/items/melon.png",
+                                                   "$texture_hover": "textures/items/melon.png",
+                                                   "$texture_pressed": "textures/items/melon.png"
+                                                }
+                                             },
+                                             {
+                                                "mushroom_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 6,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "mushroom_collection",
+                                                   "$hover_text": "§sMushroom",
+                                                   "$texture_default": "textures/blocks/mushroom_brown.png",
+                                                   "$texture_hover": "textures/blocks/mushroom_brown.png",
+                                                   "$texture_pressed": "textures/blocks/mushroom_brown.png"
+                                                }
+                                             },
+                                             {
+                                                "cocoa_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 7,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "cocoa_collection",
+                                                   "$hover_text": "§nCocoa Beans",
+                                                   "$texture_default": "textures/ui/minion_types/farming/cocoa/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/farming/cocoa/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/farming/cocoa/default.png"
+                                                }
+                                             },
+                                             {
+                                                "sugar_cane_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 8,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "sugar_cane_collection",
+                                                   "$hover_text": "§aSugar Cane",
+                                                   "$texture_default": "textures/ui/minion_types/farming/sugar_cane/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/farming/sugar_cane/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/farming/sugar_cane/default.png"
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    },
+                                    {
+                                       "second_row": {
+                                          "type": "stack_panel",
+                                          "orientation": "horizontal",
+                                          "size": [
+                                             "100%c",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "chicken_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 9,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "chicken_collection",
+                                                   "$hover_text": "§hChicken",
+                                                   "$texture_default": "textures/items/chicken_raw.png",
+                                                   "$texture_hover": "textures/items/chicken_raw.png",
+                                                   "$texture_pressed": "textures/items/chicken_raw.png"
+                                                }
+                                             },
+                                             {
+                                                "cow_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 10,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "cow_collection",
+                                                   "$hover_text": "§mCow",
+                                                   "$texture_default": "textures/items/beef_raw.png",
+                                                   "$texture_hover": "textures/items/beef_raw.png",
+                                                   "$texture_pressed": "textures/items/beef_raw.png"
+                                                }
+                                             },
+                                             {
+                                                "pig_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 11,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "pig_collection",
+                                                   "$hover_text": "§dPig",
+                                                   "$texture_default": "textures/items/porkchop_raw.png",
+                                                   "$texture_hover": "textures/items/porkchop_raw.png",
+                                                   "$texture_pressed": "textures/items/porkchop_raw.png"
+                                                }
+                                             },
+                                             {
+                                                "sheep_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 12,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "sheep_collection",
+                                                   "$hover_text": "§fSheep",
+                                                   "$texture_default": "textures/items/mutton_raw.png",
+                                                   "$texture_hover": "textures/items/mutton_raw.png",
+                                                   "$texture_pressed": "textures/items/mutton_raw.png"
+                                                }
+                                             },
+                                             {
+                                                "cactus_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 13,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "cactus_collection",
+                                                   "$hover_text": "§2Cactus",
+                                                   "$texture_default": "textures/ui/minion_types/farming/cactus/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/farming/cactus/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/farming/cactus/default.png"
+                                                }
+                                             },
+                                             {
+                                                "beetroot_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 14,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "beetroot_collection",
+                                                   "$hover_text": "§4Beetroot",
+                                                   "$texture_default": "textures/items/beetroot.png",
+                                                   "$texture_hover": "textures/items/beetroot.png",
+                                                   "$texture_pressed": "textures/items/beetroot.png"
+                                                }
+                                             },
+                                             {
+                                                "rabbit_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 15,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "rabbit_collection",
+                                                   "$hover_text": "§pRabbit",
+                                                   "$texture_default": "textures/items/rabbit_raw.png",
+                                                   "$texture_hover": "textures/items/rabbit_raw.png",
+                                                   "$texture_pressed": "textures/items/rabbit_raw.png"
+                                                }
+                                             },
+                                             {
+                                                "duck_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 16,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "duck_collection",
+                                                   "$hover_text": "§qDuck",
+                                                   "$texture_default": "textures/ui/minion_types/farming/duck/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/farming/duck/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/farming/duck/default.png"
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    }
+                                 ]
+                              }
+                           }
+                        ]
+                     }
+                  },
+                  {
+                     "second_padding": {
+                        "type": "panel",
+                        "size": [
+                           "0px",
+                           "10px"
+                        ]
+                     }
+                  },
+                  {
+                     "minion_upgrades_panel": {
+                        "type": "panel",
+                        "size": [
+                           "100%",
+                           "100%cm"
+                        ],
+                        "controls": [
+                           {
+                              "stack_panel": {
+                                 "type": "stack_panel",
+                                 "orientation": "horizontal",
+                                 "size": [
+                                    "100%c",
+                                    "100%cm"
+                                 ],
+                                 "controls": [
+                                    {
+                                       "super_compactor@minion_calculator.toggle_template": {
+                                          "$toggle_name": "compactors",
+                                          "$toggle_view_binding_name": "super_compactor",
+                                          "$hover_text": "§1Super Compactor 3000",
+                                          "$texture": "textures/ui/minion_types/upgrades/super_compactor.png"
+                                       }
+                                    }
+                                 ]
+                              }
+                           }
+                        ]
+                     }
+                  },
+                  {
+                     "third_padding": {
+                        "type": "panel",
+                        "size": [
+                           "0px",
+                           "10px"
+                        ]
+                     }
+                  },
+                  {
+                     "minion_tier_slider_panel": {
+                        "type": "panel",
+                        "size": [
+                           "100%",
+                           "10px"
+                        ],
+                        "controls": [
+                           {
+                              "minion_tier_slider@common.slider": {
+                                 "$slider_name": "minion_tier_slider",
+                                 "$slider_steps": 11,
+                                 "property_bag": {
+                                    "#slider_steps": 11,
+                                    "#slider_value": 0
+                                 },
+                                 "size": [
+                                    "100% - 20px",
+                                    "100%"
+                                 ]
+                              }
+                           }
+                        ]
+                     }
+                  },
+                  {
+                     "fourth_padding": {
+                        "type": "panel",
+                        "size": [
+                           "0px",
+                           "10px"
+                        ]
+                     }
+                  },
+                  {
+                     "result": {
+                        "type": "panel",
+                        "size": [
+                           "100%",
+                           "20px"
+                        ],
+                        "controls": [
+                           {
+                              "data_control": {
+                                 "type": "panel",
+                                 "size": [
+                                    "0px",
+                                    "0px"
+                                 ]
+                              }
+                           },
+                           {
+                              "label": {
+                                 "type": "label",
+                                 "text": "#text",
+                                 "color": [
+                                    0.3,
+                                    0.3,
+                                    0.3
+                                 ],
+                                 "$1twheat": 2880,
+                                 "$2twheat": 2880,
+                                 "$3twheat": 3323,
+                                 "$4twheat": 3323,
+                                 "$5twheat": 3927,
+                                 "$6twheat": 3927,
+                                 "$7twheat": 4320,
+                                 "$8twheat": 4320,
+                                 "$9twheat": 4800,
+                                 "$10twheat": 4800,
+                                 "$11twheat": 5400,
+                                 "bindings": [
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "wheat_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#wheat"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "minion_tier_slider",
+                                       "source_property_name": "(#slider_value  * 1 + 1)",
+                                       "target_property_name": "#tier"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "('§r' + (#wheat * ((((#tier = 1) * 1) * $1twheat) + (((#tier = 2) * 1) * $2twheat) + (((#tier = 3) * 1) * $3twheat))))",
+                                       "target_property_name": "#text"
+                                    }
+                                 ]
+                              }
+                           }
+                        ]
+                     }
+                  }
+               ]
+            }
+         }
+      ]
+   },
+   "minion_result_label": {
+      "type": "label",
+      "$first_tier_amount": 0,
+      "$second_tier_amount": 0,
+      "$third_tier_amount": 0,
+      "$fourth_tier_amount": 0,
+      "$fith_tier_amount": 0,
+      "$sixth_tier_amount": 0,
+      "$seventh_tier_amount": 0,
+      "$eighth_tier_amount": 0,
+      "$nineth_tier_amount": 0,
+      "$tenth_tier_amount": 0,
+      "$eleventh_tier_amount": 0,
+      "bindings": [
+         // {
+         //    "binding_type": "view",
+         //    "source_property_name": "()"
+         // }
+      ]
+   },
+   "tab_template": {
+      "type": "panel",
+      "$index|default": 0,
+      "$toggle_name|default": "none",
+      "$texture_default|default": "textures/ui/Black",
+      "$texture_hover|default": "textures/ui/Black",
+      "$texture_pressed|default": "textures/ui/Black",
+      "$hover_text|default": "",
+      "$toggle_view_binding_name|default": "none",
+      "size": [
+         "18px",
+         "18px"
+      ],
+      "controls": [
+         {
+            "$toggle_view_binding_name@common.radio_toggle": {
+               // "$hover_text|default": "",
+               "$icon_texture_default|default": "$texture_default",
+               "$icon_texture_hover|default": "$texture_hover",
+               "$icon_texture_pressed|default": "$texture_pressed",
+               "$toggle_group_forced_index": "$index",
+               "$toggle_group_default_selected": 0,
+               "$unchecked_control|default": "minion_calculator.toggle_unchecked",
+               "$checked_control|default": "minion_calculator.toggle_checked",
+               "$unchecked_hover_control|default": "minion_calculator.toggle_unchecked_hover",
+               "$checked_hover_control|default": "minion_calculator.toggle_checked_hover"
+            }
+         }
+      ]
+   },
+   "toggle_template": {
+      "type": "panel",
+      "$toggle_name|default": "none",
+      "$texture|default": "textures/ui/Black",
+      "$toggle_view_binding_name|default": "none",
+      "$hover_text|default": "",
+      "size": [
+         "18px",
+         "18px"
+      ],
+      "controls": [
+         {
+            "$toggle_view_binding_name@common.toggle": {
+               "$texture_default|default": "$texture",
+               "$texture_hover|default": "$texture",
+               "$texture_pressed|default": "$texture",
+               "$unchecked_control|default": "minion_calculator.toggle_unchecked",
+               "$checked_control|default": "minion_calculator.toggle_checked",
+               "$unchecked_hover_control|default": "minion_calculator.toggle_unchecked_hover",
+               "$checked_hover_control|default": "minion_calculator.toggle_checked_hover",
+               "$unchecked_locked_control": "common.empty_panel",
+               "$unchecked_locked_hover_control": "common.empty_panel",
+               "$checked_locked_control": "common.empty_panel",
+               "$checked_locked_hover_control": "common.empty_panel"
+            }
+         }
+      ]
+   },
+   "toggle_unchecked": {
+      "type": "image",
+      "texture": "textures/ui/container_slot",
+      "controls": [
+         {
+            "icon": {
+               "type": "image",
+               "texture": "$texture_default",
+               "size": [
+                  "100% - 2px",
+                  "100% - 2px"
+               ]
+            }
+         }
+      ]
+   },
+   "toggle_checked": {
+      "type": "image",
+      "texture": "textures/ui/highlight_slot",
+      "controls": [
+         {
+            "focus_border": {
+               "type": "image",
+               "texture": "textures/ui/focus_border_white"
+            }
+         },
+         {
+            "icon": {
+               "type": "image",
+               "texture": "$texture_pressed",
+               "size": [
+                  "100% - 2px",
+                  "100% - 2px"
+               ]
+            }
+         }
+      ]
+   },
+   "toggle_unchecked_hover": {
+      "type": "image",
+      "texture": "textures/ui/highlight_slot",
+      "controls": [
+         {
+            "focus_border": {
+               "type": "image",
+               "texture": "textures/ui/focus_border_white"
+            }
+         },
+         {
+            "icon": {
+               "type": "image",
+               "texture": "$texture_hover",
+               "size": [
+                  "100% - 2px",
+                  "100% - 2px"
+               ]
+            }
+         },
+         {
+            "hover_text_panel": {
+               "type": "custom",
+               "renderer": "hover_text_renderer",
+               "allow_clipping": false,
+               "layer": 20,
+               "property_bag": {
+                  "#hover_text": "$hover_text"
+               }
+            }
+         }
+      ]
+   },
+   "toggle_checked_hover": {
+      "type": "image",
+      "texture": "textures/ui/highlight_slot",
+      "controls": [
+         {
+            "focus_border": {
+               "type": "image",
+               "texture": "textures/ui/focus_border_white"
+            }
+         },
+         {
+            "icon": {
+               "type": "image",
+               "texture": "$texture_pressed",
+               "size": [
+                  "100% - 2px",
+                  "100% - 2px"
+               ]
+            }
+         },
+         {
+            "hover_text_panel": {
+               "type": "custom",
+               "renderer": "hover_text_renderer",
+               "allow_clipping": false,
+               "layer": 20,
+               "property_bag": {
+                  "#hover_text": "$hover_text"
+               }
+            }
+         }
+      ]
+   }
+}

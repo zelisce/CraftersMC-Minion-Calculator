@@ -1,0 +1,247 @@
+{
+    "namespace": "utils_screen",
+    "main": {
+        "type": "panel",
+        "visible": false,
+        "enabled": false,
+        "layer": 15,
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "utils_screen_visibility",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible"
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "utils_screen_visibility",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#enabled"
+            }
+        ],
+        "controls": [
+            {
+                "background": {
+                    "type": "image",
+                    "texture": "textures/ui/dialog_background_opaque",
+                    "size": [
+                        "100%sm",
+                        "100%sm"
+                    ]
+                }
+            },
+            {
+                "content_panel": {
+                    "type": "panel",
+                    "size": [
+                        "100%cm + 20px",
+                        "100%cm + 20px"
+                    ],
+                    "controls": [
+                        {
+                            "credits_page": {
+                                "type": "panel",
+                                "size": [
+                                    "100%cm + 20px",
+                                    "100%cm + 20px"
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "minion_calculator_tab",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#minion_calculator_invisible"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "notation_screen_tab",
+                                        "source_property_name": "(not #toggle_state)",
+                                        "target_property_name": "#notation_screen_invisible"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "(#minion_calculator_invisible and #notation_screen_invisible)",
+                                        "target_property_name": "#visible"
+                                    }
+                                ],
+                                "controls": [
+                                    {
+                                        "label": {
+                                            "type": "label",
+                                            "text": "CraftersMC Utils!\n\nMade by zelisce\n\nThis utils pack includes:\n- Minions Calculator",
+                                            "text_alignment": "center",
+                                            "color": [
+                                                0.3,
+                                                0.3,
+                                                0.3
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "minion_calculator@minion_calculator.main": {
+                                "visible": false,
+                                "enabled": false,
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "minion_calculator_tab",
+                                        "source_property_name": "#toggle_state",
+                                        "target_property_name": "#visible"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "minion_calculator_tab",
+                                        "source_property_name": "#toggle_state",
+                                        "target_property_name": "#enabled"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "notation_screen@notes.main": {
+                                "visible": false,
+                                "enabled": false,
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "notation_screen_tab",
+                                        "source_property_name": "#toggle_state",
+                                        "target_property_name": "#visible"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "notation_screen_tab",
+                                        "source_property_name": "#toggle_state",
+                                        "target_property_name": "#enabled"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "tabs_panel": {
+                    "type": "image",
+                    "texture": "textures/ui/toolbar_background",
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "size": [
+                        "100%cm + 10px",
+                        "20px"
+                    ],
+                    "offset": [
+                        "0px",
+                        "-100%y + 3px"
+                    ],
+                    "controls": [
+                        {
+                            "stack_panel": {
+                                "type": "stack_panel",
+                                "orientation": "horizontal",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "size": [
+                                    "100%c",
+                                    "100% - 0px"
+                                ],
+                                "controls": [
+                                    {
+                                        "minion_calculator_tab@utils_screen.tab_template": {
+                                            "$index": 1,
+                                            "$toggle_name": "utils_type_tabs",
+                                            "$toggle_view_binding": "minion_calculator_tab",
+                                            "$hover_text": "§bMinion Calculator!§r",
+                                            "$icon_texture_default": "textures/ui/minion_types/icon/default.png",
+                                            "$icon_texture_hover": "textures/ui/minion_types/icon/hover.png",
+                                            "$icon_texture_pressed": "textures/ui/minion_types/icon/pressed.png"
+                                        }
+                                    },
+                                    {
+                                        "notation_screen_tab@utils_screen.tab_template": {
+                                            "$index": 2,
+                                            "$toggle_name": "utils_type_tabs",
+                                            "$toggle_view_binding": "notation_screen_tab",
+                                            "$hover_text": "§7Notes!§r",
+                                            "$icon_texture_default": "textures/ui/notation_screen/icon.png",
+                                            "$icon_texture_hover": "textures/ui/notation_screen/icon.png",
+                                            "$icon_texture_pressed": "textures/ui/notation_screen/icon.png"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "tab_template@common.radio_toggle": {
+        "$index|default": 0,
+        "$toggle_name|default": "none",
+        "$icon_texture_default|default": "textures/ui/Black",
+        "$icon_texture_hover|default": "textures/ui/Black",
+        "$icon_texture_pressed|default": "textures/ui/Black",
+        "$hover_text|default": "",
+        "$toggle_view_binding_name|default": "none",
+        "$unchecked_control|default": "utils_screen.toggle_unchecked",
+        "$checked_control|default": "utils_screen.toggle_checked",
+        "$unchecked_hover_control|default": "utils_screen.toggle_unchecked_hover",
+        "$checked_hover_control|default": "utils_screen.toggle_checked_hover",
+        "$toggle_group_default_selected": 0,
+        "$toggle_group_forced_index": "$index",
+        "size": [
+            "20px",
+            "100%"
+        ]
+    },
+    "toggle_unchecked": {
+        "type": "image",
+        "texture": "$icon_texture_default"
+    },
+    "toggle_checked": {
+        "type": "image",
+        "texture": "$icon_texture_pressed"
+    },
+    "toggle_unchecked_hover": {
+        "type": "image",
+        "texture": "$icon_texture_hover",
+        "controls": [
+            {
+                "hover_text_panel": {
+                    "type": "custom",
+                    "renderer": "hover_text_renderer",
+                    "allow_clipping": false,
+                    "layer": 20,
+                    "property_bag": {
+                        "#hover_text": "$hover_text"
+                    }
+                }
+            }
+        ]
+    },
+    "toggle_checked_hover": {
+        "type": "image",
+        "texture": "$icon_texture_pressed",
+        "controls": [
+            {
+                "hover_text_panel": {
+                    "type": "custom",
+                    "renderer": "hover_text_renderer",
+                    "allow_clipping": false,
+                    "layer": 20,
+                    "property_bag": {
+                        "#hover_text": "$hover_text"
+                    }
+                }
+            }
+        ]
+    }
+}
