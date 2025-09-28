@@ -4,7 +4,7 @@
         "type": "panel",
         "visible": false,
         "enabled": false,
-        "layer": 15,
+        "layer": 21,
         "size": [
             "100%cm",
             "100%cm"
@@ -56,15 +56,20 @@
                                         "source_property_name": "(not #toggle_state)",
                                         "target_property_name": "#minion_calculator_invisible"
                                     },
+                                    // {
+                                    //     "binding_type": "view",
+                                    //     "source_control_name": "notation_screen_tab",
+                                    //     "source_property_name": "(not #toggle_state)",
+                                    //     "target_property_name": "#notation_screen_invisible"
+                                    // },
+                                    // {
+                                    //     "binding_type": "view",
+                                    //     "source_property_name": "(#minion_calculator_invisible and #notation_screen_invisible)",
+                                    //     "target_property_name": "#visible"
+                                    // }
                                     {
                                         "binding_type": "view",
-                                        "source_control_name": "notation_screen_tab",
-                                        "source_property_name": "(not #toggle_state)",
-                                        "target_property_name": "#notation_screen_invisible"
-                                    },
-                                    {
-                                        "binding_type": "view",
-                                        "source_property_name": "(#minion_calculator_invisible and #notation_screen_invisible)",
+                                        "source_property_name": "(#minion_calculator_invisible)",
                                         "target_property_name": "#visible"
                                     }
                                 ],
@@ -163,18 +168,18 @@
                                             "$icon_texture_hover": "textures/ui/minion_types/icon/hover.png",
                                             "$icon_texture_pressed": "textures/ui/minion_types/icon/pressed.png"
                                         }
-                                    },
-                                    {
-                                        "notation_screen_tab@utils_screen.tab_template": {
-                                            "$index": 2,
-                                            "$toggle_name": "utils_type_tabs",
-                                            "$toggle_view_binding": "notation_screen_tab",
-                                            "$hover_text": "§7Notes!§r",
-                                            "$icon_texture_default": "textures/ui/notation_screen/icon.png",
-                                            "$icon_texture_hover": "textures/ui/notation_screen/icon.png",
-                                            "$icon_texture_pressed": "textures/ui/notation_screen/icon.png"
-                                        }
                                     }
+                                    // {
+                                    //     "notation_screen_tab@utils_screen.tab_template": {
+                                    //         "$index": 2,
+                                    //         "$toggle_name": "utils_type_tabs",
+                                    //         "$toggle_view_binding": "notation_screen_tab",
+                                    //         "$hover_text": "§7Notes!§r",
+                                    //         "$icon_texture_default": "textures/ui/notation_screen/icon.png",
+                                    //         "$icon_texture_hover": "textures/ui/notation_screen/icon.png",
+                                    //         "$icon_texture_pressed": "textures/ui/notation_screen/icon.png"
+                                    //     }
+                                    // }
                                 ]
                             }
                         }

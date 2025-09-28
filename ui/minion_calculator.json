@@ -54,6 +54,28 @@
                                           "$texture_hover": "textures/ui/minion_types/mining/default.png",
                                           "$texture_pressed": "textures/ui/minion_types/mining/default.png"
                                        }
+                                    },
+                                    {
+                                       "combat_type_tab@minion_calculator.tab_template": {
+                                          "$index": 2,
+                                          "$toggle_name": "minion_type_tabs",
+                                          "$toggle_view_binding_name": "combat_type",
+                                          "$hover_text": "§cCombat",
+                                          "$texture_default": "textures/ui/minion_types/combat/default.png",
+                                          "$texture_hover": "textures/ui/minion_types/combat/default.png",
+                                          "$texture_pressed": "textures/ui/minion_types/combat/default.png"
+                                       }
+                                    },
+                                    {
+                                       "foraging_type_tab@minion_calculator.tab_template": {
+                                          "$index": 3,
+                                          "$toggle_name": "minion_type_tabs",
+                                          "$toggle_view_binding_name": "foraging_type",
+                                          "$hover_text": "§tForaging",
+                                          "$texture_default": "textures/ui/minion_types/foraging/default.png",
+                                          "$texture_hover": "textures/ui/minion_types/foraging/default.png",
+                                          "$texture_pressed": "textures/ui/minion_types/foraging/default.png"
+                                       }
                                     }
                                  ]
                               }
@@ -118,11 +140,7 @@
                                                    "$hover_text": "§gWheat",
                                                    "$texture_default": "textures/items/wheat.png",
                                                    "$texture_hover": "textures/items/wheat.png",
-                                                   "$texture_pressed": "textures/items/wheat.png",
-                                                   "property_bag": {
-                                                      "#tier_1": 2880,
-                                                      "#tier_3": 3323
-                                                   }
+                                                   "$texture_pressed": "textures/items/wheat.png"
                                                 }
                                              },
                                              {
@@ -307,6 +325,452 @@
                                     }
                                  ]
                               }
+                           },
+                           {
+                              "mining_types": {
+                                 "type": "stack_panel",
+                                 "orientation": "vertical",
+                                 "size": [
+                                    "100%cm",
+                                    "100%c"
+                                 ],
+                                 "bindings": [
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "mining_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#visible"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "mining_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#enabled"
+                                    }
+                                 ],
+                                 "controls": [
+                                    {
+                                       "first_row": {
+                                          "type": "stack_panel",
+                                          "orientation": "horizontal",
+                                          "size": [
+                                             "100%c",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "cobblestone_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 17,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "cobblestone_collection",
+                                                   "$hover_text": "§gCobblestone",
+                                                   "$texture_default": "textures/ui/minion_types/mining/cobblestone/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/mining/cobblestone/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/mining/cobblestone/default.png"
+                                                }
+                                             },
+                                             {
+                                                "coal_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 18,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "coal_collection",
+                                                   "$hover_text": "§vCoal",
+                                                   "$texture_default": "textures/items/coal.png",
+                                                   "$texture_hover": "textures/items/coal.png",
+                                                   "$texture_pressed": "textures/items/coal.png"
+                                                }
+                                             },
+                                             {
+                                                "iron_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 19,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "iron_collection",
+                                                   "$hover_text": "§pIron",
+                                                   "$texture_default": "textures/items/iron_ingot.png",
+                                                   "$texture_hover": "textures/items/iron_ingot.png",
+                                                   "$texture_pressed": "textures/items/iron_ingot.png"
+                                                }
+                                             },
+                                             {
+                                                "gold_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 20,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "gold_collection",
+                                                   "$hover_text": "§6Gold",
+                                                   "$texture_default": "textures/items/gold_ingot.png",
+                                                   "$texture_hover": "textures/items/gold_ingot.png",
+                                                   "$texture_pressed": "textures/items/gold_ingot.png"
+                                                }
+                                             },
+                                             {
+                                                "diamond_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 21,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "diamond_collection",
+                                                   "$hover_text": "§bDiamond",
+                                                   "$texture_default": "textures/items/diamond.png",
+                                                   "$texture_hover": "textures/items/diamond.png",
+                                                   "$texture_pressed": "textures/items/diamond.png"
+                                                }
+                                             },
+                                             {
+                                                "lapis_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 22,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "lapis_collection",
+                                                   "$hover_text": "§1Lapis Lazuli",
+                                                   "$texture_default": "textures/ui/minion_types/mining/lapis/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/mining/lapis/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/mining/lapis/default.png"
+                                                }
+                                             },
+                                             {
+                                                "emerald_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 23,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "emerald_collection",
+                                                   "$hover_text": "§aEmerald",
+                                                   "$texture_default": "textures/items/emerald.png",
+                                                   "$texture_hover": "textures/items/emerald.png",
+                                                   "$texture_pressed": "textures/items/emerald.png"
+                                                }
+                                             },
+                                             {
+                                                "redstone_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 24,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "redstone_collection",
+                                                   "$hover_text": "§cRedstone",
+                                                   "$texture_default": "textures/items/redstone_dust.png",
+                                                   "$texture_hover": "textures/items/redstone_dust.png",
+                                                   "$texture_pressed": "textures/items/redstone_dust.png"
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    },
+                                    {
+                                       "second_row": {
+                                          "type": "panel",
+                                          "size": [
+                                             "100%sm",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "stack_panel": {
+                                                   "type": "stack_panel",
+                                                   "orientation": "horizontal",
+                                                   "size": [
+                                                      "100%c",
+                                                      "100%cm"
+                                                   ],
+                                                   "controls": [
+                                                      {
+                                                         "obsidian_collection_tab@minion_calculator.tab_template": {
+                                                            "$index": 25,
+                                                            "$toggle_name": "minion_collection_tabs",
+                                                            "$toggle_view_binding_name": "obsidian_collection",
+                                                            "$hover_text": "§hObsidian",
+                                                            "$texture_default": "textures/ui/minion_types/mining/obsidian/default.png",
+                                                            "$texture_hover": "textures/ui/minion_types/mining/obsidian/default.png",
+                                                            "$texture_pressed": "textures/ui/minion_types/mining/obsidian/default.png"
+                                                         }
+                                                      },
+                                                      {
+                                                         "ice_collection_tab@minion_calculator.tab_template": {
+                                                            "$index": 26,
+                                                            "$toggle_name": "minion_collection_tabs",
+                                                            "$toggle_view_binding_name": "ice_collection",
+                                                            "$hover_text": "§bIce",
+                                                            "$texture_default": "textures/ui/minion_types/mining/ice/default.png",
+                                                            "$texture_hover": "textures/ui/minion_types/mining/ice/default.png",
+                                                            "$texture_pressed": "textures/ui/minion_types/mining/ice/default.png"
+                                                         }
+                                                      }
+                                                   ]
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    }
+                                 ]
+                              }
+                           },
+                           {
+                              "combat_types": {
+                                 "type": "stack_panel",
+                                 "orientation": "vertical",
+                                 "size": [
+                                    "100%cm",
+                                    "100%c"
+                                 ],
+                                 "bindings": [
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "combat_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#visible"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "combat_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#enabled"
+                                    }
+                                 ],
+                                 "controls": [
+                                    {
+                                       "first_row": {
+                                          "type": "stack_panel",
+                                          "orientation": "horizontal",
+                                          "size": [
+                                             "100%c",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "zombie_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 27,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "zombie_collection",
+                                                   "$hover_text": "§2Zombie",
+                                                   "$texture_default": "textures/items/rotten_flesh.png",
+                                                   "$texture_hover": "textures/items/rotten_flesh.png",
+                                                   "$texture_pressed": "textures/items/rotten_flesh.png"
+                                                }
+                                             },
+                                             {
+                                                "skeleton_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 28,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "skeleton_collection",
+                                                   "$hover_text": "§fSkeleton",
+                                                   "$texture_default": "textures/items/bone.png",
+                                                   "$texture_hover": "textures/items/bone.png",
+                                                   "$texture_pressed": "textures/items/bone.png"
+                                                }
+                                             },
+                                             {
+                                                "spider_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 29,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "spider_collection",
+                                                   "$hover_text": "§8Spider",
+                                                   "$texture_default": "textures/items/string.png",
+                                                   "$texture_hover": "textures/items/string.png",
+                                                   "$texture_pressed": "textures/items/string.png"
+                                                }
+                                             },
+                                             {
+                                                "cave_spider_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 30,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "cave_spider_collection",
+                                                   "$hover_text": "§5Cave Spider",
+                                                   "$texture_default": "textures/items/spider_eye.png",
+                                                   "$texture_hover": "textures/items/spider_eye.png",
+                                                   "$texture_pressed": "textures/items/spider_eye.png"
+                                                }
+                                             },
+                                             {
+                                                "creeper_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 31,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "creeper_collection",
+                                                   "$hover_text": "§aCreeper",
+                                                   "$texture_default": "textures/items/gunpowder.png",
+                                                   "$texture_hover": "textures/items/gunpowder.png",
+                                                   "$texture_pressed": "textures/items/gunpowder.png"
+                                                }
+                                             },
+                                             {
+                                                "slime_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 32,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "slime_collection",
+                                                   "$hover_text": "§aSlime",
+                                                   "$texture_default": "textures/items/slimeball.png",
+                                                   "$texture_hover": "textures/items/slimeball.png",
+                                                   "$texture_pressed": "textures/items/slimeball.png"
+                                                }
+                                             },
+                                             {
+                                                "blaze_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 33,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "blaze_collection",
+                                                   "$hover_text": "§6Blaze",
+                                                   "$texture_default": "textures/items/blaze_rod.png",
+                                                   "$texture_hover": "textures/items/blaze_rod.png",
+                                                   "$texture_pressed": "textures/items/blaze_rod.png"
+                                                }
+                                             },
+                                             {
+                                                "magma_cube_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 34,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "magma_cube_collection",
+                                                   "$hover_text": "§6Magma Cube",
+                                                   "$texture_default": "textures/items/magma_cream.png",
+                                                   "$texture_hover": "textures/items/magma_cream.png",
+                                                   "$texture_pressed": "textures/items/magma_cream.png"
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    },
+                                    {
+                                       "second_row": {
+                                          "type": "panel",
+                                          "size": [
+                                             "100%sm",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "stack_panel": {
+                                                   "type": "stack_panel",
+                                                   "orientation": "horizontal",
+                                                   "size": [
+                                                      "100%c",
+                                                      "100%cm"
+                                                   ],
+                                                   "controls": [
+                                                      {
+                                                         "revenant_collection_tab@minion_calculator.tab_template": {
+                                                            "$index": 35,
+                                                            "$toggle_name": "minion_collection_tabs",
+                                                            "$toggle_view_binding_name": "revenant_collection",
+                                                            "$hover_text": "§8Revenant",
+                                                            "$texture_default": "textures/ui/minion_types/combat/revenant/default.png",
+                                                            "$texture_hover": "textures/ui/minion_types/combat/revenant/default.png",
+                                                            "$texture_pressed": "textures/ui/minion_types/combat/revenant/default.png"
+                                                         }
+                                                      }
+                                                   ]
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    }
+                                 ]
+                              }
+                           },
+                           {
+                              "foraging_types": {
+                                 "type": "stack_panel",
+                                 "orientation": "vertical",
+                                 "size": [
+                                    "100%cm",
+                                    "100%c"
+                                 ],
+                                 "bindings": [
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "foraging_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#visible"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "foraging_type",
+                                       "source_property_name": "#toggle_state",
+                                       "target_property_name": "#enabled"
+                                    }
+                                 ],
+                                 "controls": [
+                                    {
+                                       "first_row": {
+                                          "type": "stack_panel",
+                                          "orientation": "horizontal",
+                                          "size": [
+                                             "100%c",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "oak_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 36,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "oak_collection",
+                                                   "$hover_text": "§6Oak",
+                                                   "$texture_default": "textures/ui/minion_types/foraging/oak/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/foraging/oak/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/foraging/oak/default.png"
+                                                }
+                                             },
+                                             {
+                                                "spruce_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 37,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "spruce_collection",
+                                                   "$hover_text": "§6Spruce",
+                                                   "$texture_default": "textures/ui/minion_types/foraging/spruce/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/foraging/spruce/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/foraging/spruce/default.png"
+                                                }
+                                             },
+                                             {
+                                                "birch_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 38,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "birch_collection",
+                                                   "$hover_text": "§6Birch",
+                                                   "$texture_default": "textures/ui/minion_types/foraging/birch/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/foraging/birch/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/foraging/birch/default.png"
+                                                }
+                                             },
+                                             {
+                                                "dark_oak_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 39,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "dark_oak_collection",
+                                                   "$hover_text": "§8Dark Oak",
+                                                   "$texture_default": "textures/ui/minion_types/foraging/dark_oak/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/foraging/dark_oak/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/foraging/dark_oak/default.png"
+                                                }
+                                             },
+                                             {
+                                                "acacia_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 40,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "acacia_collection",
+                                                   "$hover_text": "§6Acacia",
+                                                   "$texture_default": "textures/ui/minion_types/foraging/acacia/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/foraging/acacia/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/foraging/acacia/default.png"
+                                                }
+                                             },
+                                             {
+                                                "jungle_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 41,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "jungle_collection",
+                                                   "$hover_text": "§2Jungle",
+                                                   "$texture_default": "textures/ui/minion_types/foraging/jungle/default.png",
+                                                   "$texture_hover": "textures/ui/minion_types/foraging/jungle/default.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/foraging/jungle/default.png"
+                                                }
+                                             },
+                                             {
+                                                "bamboo_collection_tab@minion_calculator.tab_template": {
+                                                   "$index": 42,
+                                                   "$toggle_name": "minion_collection_tabs",
+                                                   "$toggle_view_binding_name": "bamboo_collection",
+                                                   "$hover_text": "§aBamboo",
+                                                   "$texture_default": "textures/items/bamboo.png",
+                                                   "$texture_hover": "textures/items/bamboo.png",
+                                                   "$texture_pressed": "textures/items/bamboo.png"
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    }
+                                 ]
+                              }
                            }
                         ]
                      }
@@ -331,18 +795,152 @@
                            {
                               "stack_panel": {
                                  "type": "stack_panel",
-                                 "orientation": "horizontal",
+                                 "orientation": "vertical",
                                  "size": [
-                                    "100%c",
-                                    "100%cm"
+                                    "100%cm",
+                                    "100%c"
                                  ],
                                  "controls": [
                                     {
-                                       "super_compactor@minion_calculator.toggle_template": {
-                                          "$toggle_name": "compactors",
-                                          "$toggle_view_binding_name": "super_compactor",
-                                          "$hover_text": "§1Super Compactor 3000",
-                                          "$texture": "textures/ui/minion_types/upgrades/super_compactor.png"
+                                       "first_row": {
+                                          "type": "stack_panel",
+                                          "orientation": "horizontal",
+                                          "size": [
+                                             "100%c",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "coal_tab@minion_calculator.tab_template": {
+                                                   "$index": 1,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "coal_fuel",
+                                                   "$hover_text": "§bCoal",
+                                                   "$texture_default": "textures/items/coal.png",
+                                                   "$texture_hover": "textures/items/coal.png",
+                                                   "$texture_pressed": "textures/items/coal.png"
+                                                }
+                                             },
+                                             {
+                                                "coal_block_tab@minion_calculator.tab_template": {
+                                                   "$index": 2,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "coal_block_fuel",
+                                                   "$hover_text": "§bCoal Block",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/coal_block.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/coal_block.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/coal_block.png"
+                                                }
+                                             },
+                                             {
+                                                "enchanted_bread_tab@minion_calculator.tab_template": {
+                                                   "$index": 3,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "enchanted_bread_fuel",
+                                                   "$hover_text": "§bEnchanted Bread",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/enchanted_bread.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/enchanted_bread.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/enchanted_bread.png"
+                                                }
+                                             },
+                                             {
+                                                "enchanted_coal_tab@minion_calculator.tab_template": {
+                                                   "$index": 4,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "enchanted_coal_fuel",
+                                                   "$hover_text": "§bEnchanted Coal",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/enchanted_coal.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/enchanted_coal.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/enchanted_coal.png"
+                                                }
+                                             },
+                                             {
+                                                "enchanted_charcoal_tab@minion_calculator.tab_template": {
+                                                   "$index": 5,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "enchanted_charcoal_fuel",
+                                                   "$hover_text": "§bEnchanted Charcoal",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/enchanted_charcoal.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/enchanted_charcoal.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/enchanted_charcoal.png"
+                                                }
+                                             },
+                                             {
+                                                "enchanted_charcoal_tab@minion_calculator.tab_template": {
+                                                   "$index": 6,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "enchanted_lava_bucket_fuel",
+                                                   "$hover_text": "§bEnchanted Lava Bucket",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/enchanted_lava_bucket.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/enchanted_lava_bucket.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/enchanted_lava_bucket.png"
+                                                }
+                                             },
+                                             {
+                                                "hamster_wheel_tab@minion_calculator.tab_template": {
+                                                   "$index": 7,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "hamster_wheel_fuel",
+                                                   "$hover_text": "§bHamster Wheel",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/hamster_wheel.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/hamster_wheel.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/hamster_wheel.png"
+                                                }
+                                             },
+                                             {
+                                                "foul_flesh_tab@minion_calculator.tab_template": {
+                                                   "$index": 8,
+                                                   "$toggle_name": "fuel_tabs",
+                                                   "$toggle_view_binding_name": "foul_flesh_fuel",
+                                                   "$hover_text": "§bFoul Flesh",
+                                                   "$texture_default": "textures/ui/minion_types/upgrades/foul_flesh.png",
+                                                   "$texture_hover": "textures/ui/minion_types/upgrades/foul_flesh.png",
+                                                   "$texture_pressed": "textures/ui/minion_types/upgrades/foul_flesh.png"
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    },
+                                    {
+                                       "second_row": {
+                                          "type": "panel",
+                                          "size": [
+                                             "100%sm",
+                                             "100%cm"
+                                          ],
+                                          "controls": [
+                                             {
+                                                "stack_panel": {
+                                                   "type": "stack_panel",
+                                                   "orientation": "horizontal",
+                                                   "size": [
+                                                      "100%c",
+                                                      "100%cm"
+                                                   ],
+                                                   "controls": [
+                                                      {
+                                                         "super_compactor_toggle@minion_calculator.toggle_template": {
+                                                            "$toggle_name": "compactors",
+                                                            "$toggle_view_binding_name": "super_compactor",
+                                                            "$hover_text": "§1Super Compactor 3000",
+                                                            "$texture": "textures/ui/minion_types/upgrades/super_compactor.png"
+                                                         }
+                                                      },
+                                                      {
+                                                         "no_fuel_tab@minion_calculator.tab_template": {
+                                                            "$index": 0,
+                                                            "$toggle_name": "fuel_tabs",
+                                                            "$toggle_view_binding_name": "no_fuel_fuel",
+                                                            "$hover_text": "§cNo fuel",
+                                                            "$texture_default": "textures/blocks/barrier.png",
+                                                            "$texture_hover": "textures/blocks/barrier.png",
+                                                            "$texture_pressed": "textures/blocks/barrier.png"
+                                                         }
+                                                      }
+                                                   ]
+                                                }
+                                             }
+                                          ]
                                        }
                                     }
                                  ]
@@ -403,35 +1001,583 @@
                         ],
                         "controls": [
                            {
-                              "data_control": {
-                                 "type": "panel",
-                                 "size": [
-                                    "0px",
-                                    "0px"
-                                 ]
-                              }
-                           },
-                           {
-                              "label": {
+                              "result_label": {
                                  "type": "label",
                                  "text": "#text",
+                                 "text_alignment": "center",
                                  "color": [
                                     0.3,
                                     0.3,
                                     0.3
                                  ],
-                                 "$1twheat": 2880,
-                                 "$2twheat": 2880,
-                                 "$3twheat": 3323,
-                                 "$4twheat": 3323,
-                                 "$5twheat": 3927,
-                                 "$6twheat": 3927,
-                                 "$7twheat": 4320,
-                                 "$8twheat": 4320,
-                                 "$9twheat": 4800,
-                                 "$10twheat": 4800,
-                                 "$11twheat": 5400,
+                                 "property_bag": {
+                                    "#0N0": "undefined",
+                                    "#0N1": "undefined",
+                                    "#1N0": "Wheat",
+                                    "#1N1": "Enchanted Wheat",
+                                    "#1T1": 2880,
+                                    "#1T2": 2880,
+                                    "#1T3": 3323,
+                                    "#1T4": 3323,
+                                    "#1T5": 3927,
+                                    "#1T6": 3927,
+                                    "#1T7": 4320,
+                                    "#1T8": 4320,
+                                    "#1T9": 4800,
+                                    "#1T10": 4800,
+                                    "#1T11": 5400,
+                                    "#2N0": "Carrot",
+                                    "#2N1": "Enchanted Carrot",
+                                    "#2T1": 6480,
+                                    "#2T2": 6480,
+                                    "#2T3": 7200,
+                                    "#2T4": 7200,
+                                    "#2T5": 8100,
+                                    "#2T6": 8100,
+                                    "#2T7": 9257,
+                                    "#2T8": 9257,
+                                    "#2T9": 10800,
+                                    "#2T10": 10800,
+                                    "#2T11": 12960,
+                                    "#3N0": "Potato",
+                                    "#3N1": "Enchanted Potato",
+                                    "#3T1": 6480,
+                                    "#3T2": 6480,
+                                    "#3T3": 7200,
+                                    "#3T4": 7200,
+                                    "#3T5": 8100,
+                                    "#3T6": 8100,
+                                    "#3T7": 9257,
+                                    "#3T8": 9257,
+                                    "#3T9": 10800,
+                                    "#3T10": 10800,
+                                    "#3T11": 12960,
+                                    "#4N0": "Pumpkin",
+                                    "#4N1": "Enchanted Pumpkin",
+                                    "#4T1": 1350,
+                                    "#4T2": 1350,
+                                    "#4T3": 1440,
+                                    "#4T4": 1440,
+                                    "#4T5": 1600,
+                                    "#4T6": 1600,
+                                    "#4T7": 1800,
+                                    "#4T8": 1800,
+                                    "#4T9": 2160,
+                                    "#4T10": 2160,
+                                    "#4T11": 2700,
+                                    "#5N0": "Melon Piece",
+                                    "#5N1": "Enchanted Melon",
+                                    "#5T1": 9000,
+                                    "#5T2": 9000,
+                                    "#5T3": 9599,
+                                    "#5T4": 9599,
+                                    "#5T5": 10285,
+                                    "#5T6": 10285,
+                                    "#5T7": 11675,
+                                    "#5T8": 11675,
+                                    "#5T9": 13500,
+                                    "#5T10": 13500,
+                                    "#5T11": 16615,
+                                    "#6N0": "Mushroom (Red/Brown)",
+                                    "#6N1": "Enchanted Mushroom",
+                                    "#6T1": 1440,
+                                    "#6T2": 1440,
+                                    "#6T3": 1542,
+                                    "#6T4": 1542,
+                                    "#6T5": 1660,
+                                    "#6T6": 1660,
+                                    "#6T7": 1878,
+                                    "#6T8": 1878,
+                                    "#6T9": 2160,
+                                    "#6T10": 2160,
+                                    "#6T11": 2700,
+                                    "#7N0": "Cocoa Beans",
+                                    "#7N1": "Enchanted Cocoa Bean",
+                                    "#7T1": 4800,
+                                    "#7T2": 4800,
+                                    "#7T3": 5183,
+                                    "#7T4": 5183,
+                                    "#7T5": 5634,
+                                    "#7T6": 5634,
+                                    "#7T7": 6171,
+                                    "#7T8": 6171,
+                                    "#7T9": 7200,
+                                    "#7T10": 7200,
+                                    "#7T11": 8640,
+                                    "#8N0": "Sugar Cane",
+                                    "#8N1": "Enchanted Sugar",
+                                    "#8T1": 5890,
+                                    "#8T2": 5890,
+                                    "#8T3": 6480,
+                                    "#8T4": 6480,
+                                    "#8T5": 7200,
+                                    "#8T6": 7200,
+                                    "#8T7": 8100,
+                                    "#8T8": 8100,
+                                    "#8T9": 8937,
+                                    "#8T10": 8937,
+                                    "#8T11": 10800,
+                                    "#9N0": "Raw Chicken",
+                                    "#9N1": "Enchanted Chicken",
+                                    "#9T1": 1661,
+                                    "#9T2": 1661,
+                                    "#9T3": 1800,
+                                    "#9T4": 1800,
+                                    "#9T5": 1963,
+                                    "#9T6": 1963,
+                                    "#9T7": 2160,
+                                    "#9T8": 2160,
+                                    "#9T9": 2400,
+                                    "#9T10": 2400,
+                                    "#9T11": 2880,
+                                    "#10N0": "Raw Beef",
+                                    "#10N1": "Enchanted Beef",
+                                    "#10T1": 1661,
+                                    "#10T2": 1661,
+                                    "#10T3": 1800,
+                                    "#10T4": 1800,
+                                    "#10T5": 1963,
+                                    "#10T6": 1963,
+                                    "#10T7": 2160,
+                                    "#10T8": 2160,
+                                    "#10T9": 2400,
+                                    "#10T10": 2400,
+                                    "#10T11": 2880,
+                                    "#11N0": "Raw Porkchop",
+                                    "#11N1": "Enchanted Pork",
+                                    "#11T1": 1661,
+                                    "#11T2": 1661,
+                                    "#11T3": 1800,
+                                    "#11T4": 1800,
+                                    "#11T5": 1963,
+                                    "#11T6": 1963,
+                                    "#11T7": 2160,
+                                    "#11T8": 2160,
+                                    "#11T9": 2400,
+                                    "#11T10": 2400,
+                                    "#11T11": 2880,
+                                    "#12N0": "Raw Mutton",
+                                    "#12N1": "Enchanted Mutton",
+                                    "#12T1": 1800,
+                                    "#12T2": 1800,
+                                    "#12T3": 1963,
+                                    "#12T4": 1963,
+                                    "#12T5": 2160,
+                                    "#12T6": 2160,
+                                    "#12T7": 2400,
+                                    "#12T8": 2400,
+                                    "#12T9": 2700,
+                                    "#12T10": 2700,
+                                    "#12T11": 3600,
+                                    "#13N0": "Green Dye",
+                                    "#13N1": "Enchanted Cactus Green",
+                                    "#13T1": 4800,
+                                    "#13T2": 4800,
+                                    "#13T3": 5183,
+                                    "#13T4": 5183,
+                                    "#13T5": 5634,
+                                    "#13T6": 5634,
+                                    "#13T7": 6171,
+                                    "#13T8": 6171,
+                                    "#13T9": 7200,
+                                    "#13T10": 7200,
+                                    "#13T11": 8640,
+                                    "#14N0": "Beetroot",
+                                    "#14N1": "Enchanted Beetroot",
+                                    "#14T1": 3927,
+                                    "#14T2": 3927,
+                                    "#14T3": 4320,
+                                    "#14T4": 4320,
+                                    "#14T5": 4800,
+                                    "#14T6": 4800,
+                                    "#14T7": 5400,
+                                    "#14T8": 5400,
+                                    "#14T9": 6171,
+                                    "#14T10": 6171,
+                                    "#14T11": 7200,
+                                    "#15N0": "Raw Rabbit",
+                                    "#15N1": "Enchanted Rabbit",
+                                    "#15T1": 1661,
+                                    "#15T2": 1661,
+                                    "#15T3": 1800,
+                                    "#15T4": 1800,
+                                    "#15T5": 1963,
+                                    "#15T6": 1963,
+                                    "#15T7": 2160,
+                                    "#15T8": 2160,
+                                    "#15T9": 2541,
+                                    "#15T10": 2541,
+                                    "#15T11": 3323,
+                                    "#16N0": "Raw Duck",
+                                    "#16N1": "Enchanted Duck",
+                                    "#16T1": 1542,
+                                    "#16T2": 1542,
+                                    "#16T3": 1661,
+                                    "#16T4": 1661,
+                                    "#16T5": 1800,
+                                    "#16T6": 1800,
+                                    "#16T7": 1963,
+                                    "#16T8": 1963,
+                                    "#16T9": 2160,
+                                    "#16T10": 2160,
+                                    "#16T11": 2400,
+                                    "#17N0": "Cobblestone",
+                                    "#17N1": "Enchanted Cobblestone",
+                                    "#17T1": 2880,
+                                    "#17T2": 2880,
+                                    "#17T3": 3323,
+                                    "#17T4": 3323,
+                                    "#17T5": 3600,
+                                    "#17T6": 3600,
+                                    "#17T7": 4320,
+                                    "#17T8": 4320,
+                                    "#17T9": 4800,
+                                    "#17T10": 4800,
+                                    "#17T11": 6171,
+                                    "#18N0": "Coal",
+                                    "#18N1": "Enchanted Coal",
+                                    "#18T1": 2880,
+                                    "#18T2": 2880,
+                                    "#18T3": 3323,
+                                    "#18T4": 3323,
+                                    "#18T5": 3600,
+                                    "#18T6": 3600,
+                                    "#18T7": 4320,
+                                    "#18T8": 4320,
+                                    "#18T9": 4800,
+                                    "#18T10": 4800,
+                                    "#18T11": 6171,
+                                    "#19N0": "Iron Ingot",
+                                    "#19N1": "Enchanted Iron",
+                                    "#19T1": 2541,
+                                    "#19T2": 2541,
+                                    "#19T3": 2880,
+                                    "#19T4": 2880,
+                                    "#19T5": 3085,
+                                    "#19T6": 3085,
+                                    "#19T7": 3600,
+                                    "#19T8": 3600,
+                                    "#19T9": 4320,
+                                    "#19T10": 4320,
+                                    "#19T11": 5400,
+                                    "#20N0": "Gold Ingot",
+                                    "#20N1": "Enchanted Gold",
+                                    "#20T1": 1963,
+                                    "#20T2": 1963,
+                                    "#20T3": 2160,
+                                    "#20T4": 2160,
+                                    "#20T5": 2400,
+                                    "#20T6": 2400,
+                                    "#20T7": 2700,
+                                    "#20T8": 2700,
+                                    "#20T9": 3085,
+                                    "#20T10": 3085,
+                                    "#20T11": 3927,
+                                    "#21N0": "Diamond",
+                                    "#21N1": "Enchanted Diamond",
+                                    "#21T1": 1489,
+                                    "#21T2": 1489,
+                                    "#21T3": 1600,
+                                    "#21T4": 1600,
+                                    "#21T5": 1728,
+                                    "#21T6": 1728,
+                                    "#21T7": 1963,
+                                    "#21T8": 1963,
+                                    "#21T9": 2273,
+                                    "#21T10": 2273,
+                                    "#21T11": 2880,
+                                    "#22N0": "Lapis Lazuli",
+                                    "#22N1": "Enchanted Lapis Lazuli",
+                                    "#22T1": 8937,
+                                    "#22T2": 8937,
+                                    "#22T3": 9600,
+                                    "#22T4": 9600,
+                                    "#22T5": 10367,
+                                    "#22T6": 10367,
+                                    "#22T7": 11269,
+                                    "#22T8": 11269,
+                                    "#22T9": 12342,
+                                    "#22T10": 12342,
+                                    "#22T11": 14400,
+                                    "#23N0": "Emerald",
+                                    "#23N1": "Enchanted Emerald",
+                                    "#23T1": 1542,
+                                    "#23T2": 1542,
+                                    "#23T3": 1661,
+                                    "#23T4": 1661,
+                                    "#23T5": 1800,
+                                    "#23T6": 1800,
+                                    "#23T7": 2057,
+                                    "#23T8": 2057,
+                                    "#23T9": 2400,
+                                    "#23T10": 2400,
+                                    "#23T11": 3085,
+                                    "#24N0": "Redstone Dust",
+                                    "#24N1": "Enchanted Redstone",
+                                    "#24T1": 6703,
+                                    "#24T2": 6703,
+                                    "#24T3": 7200,
+                                    "#24T4": 7200,
+                                    "#24T5": 7775,
+                                    "#24T6": 7775,
+                                    "#24T7": 8452,
+                                    "#24T8": 8452,
+                                    "#24T9": 9257,
+                                    "#24T10": 9257,
+                                    "#24T11": 10800,
+                                    "#25N0": "Obsidian",
+                                    "#25N1": "Enchanted Obsidian",
+                                    "#25T1": 960,
+                                    "#25T2": 960,
+                                    "#25T3": 1028,
+                                    "#25T4": 1028,
+                                    "#25T5": 1107,
+                                    "#25T6": 1107,
+                                    "#25T7": 1234,
+                                    "#25T8": 1234,
+                                    "#25T9": 1440,
+                                    "#25T10": 1440,
+                                    "#25T11": 1880,
+                                    "#26N0": "Ice",
+                                    "#26N1": "Enchanted Ice",
+                                    "#26T1": 3086,
+                                    "#26T2": 3086,
+                                    "#26T3": 3600,
+                                    "#26T4": 3600,
+                                    "#26T5": 4320,
+                                    "#26T6": 4320,
+                                    "#26T7": 4800,
+                                    "#26T8": 4800,
+                                    "#26T9": 5400,
+                                    "#26T10": 5400,
+                                    "#26T11": 6171,
+                                    "#27N0": "Rotten Flesh",
+                                    "#27N1": "Enchanted Rotten Flesh",
+                                    "#27T1": 1662,
+                                    "#27T2": 1662,
+                                    "#27T3": 1800,
+                                    "#27T4": 1800,
+                                    "#27T5": 1964,
+                                    "#27T6": 1964,
+                                    "#27T7": 2160,
+                                    "#27T8": 2160,
+                                    "#27T9": 2541,
+                                    "#27T10": 2541,
+                                    "#27T11": 3323,
+                                    "#28N0": "Bone",
+                                    "#28N1": "Enchanted Bone",
+                                    "#28T1": 1662,
+                                    "#28T2": 1662,
+                                    "#28T3": 1800,
+                                    "#28T4": 1800,
+                                    "#28T5": 1964,
+                                    "#28T6": 1964,
+                                    "#28T7": 2160,
+                                    "#28T8": 2160,
+                                    "#28T9": 2541,
+                                    "#28T10": 2541,
+                                    "#28T11": 3323,
+                                    "#29N0": "String",
+                                    "#29N1": "Enchanted String",
+                                    "#29T1": 1662,
+                                    "#29T2": 1662,
+                                    "#29T3": 1800,
+                                    "#29T4": 1800,
+                                    "#29T5": 1964,
+                                    "#29T6": 1964,
+                                    "#29T7": 2160,
+                                    "#29T8": 2160,
+                                    "#29T9": 2541,
+                                    "#29T10": 2541,
+                                    "#29T11": 3323,
+                                    "#30N0": "Spider Eye",
+                                    "#30N1": "Enchanted Spider Eye",
+                                    "#30T1": 1662,
+                                    "#30T2": 1662,
+                                    "#30T3": 1800,
+                                    "#30T4": 1800,
+                                    "#30T5": 1964,
+                                    "#30T6": 1964,
+                                    "#30T7": 2160,
+                                    "#30T8": 2160,
+                                    "#30T9": 2541,
+                                    "#30T10": 2541,
+                                    "#30T11": 3323,
+                                    "#31N0": "Gunpowder",
+                                    "#31N1": "Enchanted Gunpowder",
+                                    "#31T1": 1600,
+                                    "#31T2": 1600,
+                                    "#31T3": 1728,
+                                    "#31T4": 1728,
+                                    "#31T5": 1878,
+                                    "#31T6": 1878,
+                                    "#31T7": 2057,
+                                    "#31T8": 2057,
+                                    "#31T9": 2400,
+                                    "#31T10": 2400,
+                                    "#31T11": 3086,
+                                    "#32N0": "Slimeball",
+                                    "#32N1": "Enchanted Slimeball",
+                                    "#32T1": 2991,
+                                    "#32T2": 2991,
+                                    "#32T3": 3240,
+                                    "#32T4": 3240,
+                                    "#32T5": 3535,
+                                    "#32T6": 3535,
+                                    "#32T7": 4093,
+                                    "#32T8": 4096,
+                                    "#32T9": 4860,
+                                    "#32T10": 4860,
+                                    "#32T11": 6480,
+                                    "#33N0": "Blaze Rod",
+                                    "#33N1": "Enchanted Blaze Powder",
+                                    "#33T1": 1309,
+                                    "#33T2": 1309,
+                                    "#33T3": 1394,
+                                    "#33T4": 1394,
+                                    "#33T5": 1516,
+                                    "#33T6": 1516,
+                                    "#33T7": 1728,
+                                    "#33T8": 1728,
+                                    "#33T9": 2057,
+                                    "#33T10": 2057,
+                                    "#33T11": 2618,
+                                    "#34N0": "Magma Cream",
+                                    "#34N1": "Enchanted Magma Cream",
+                                    "#34T1": 2430,
+                                    "#34T2": 2430,
+                                    "#34T3": 2592,
+                                    "#34T4": 2592,
+                                    "#34T5": 2777,
+                                    "#34T6": 2777,
+                                    "#34T7": 3110,
+                                    "#34T8": 3110,
+                                    "#34T9": 3535,
+                                    "#34T10": 3535,
+                                    "#34T11": 4320,
+                                    "#35N0": "Rotten Flesh",
+                                    "#35N1": "Enchanted Rotten Flesh",
+                                    "#35T1": 4469,
+                                    "#35T2": 4469,
+                                    "#35T3": 4985,
+                                    "#35T4": 4985,
+                                    "#35T5": 5635,
+                                    "#35T6": 5635,
+                                    "#35T7": 6821,
+                                    "#35T8": 6821,
+                                    "#35T9": 8938,
+                                    "#35T10": 8938,
+                                    "#35T11": 12960,
+                                    "#36N0": "Oak Log",
+                                    "#36N1": "Enchanted Oak Log",
+                                    "#36T1": 3600,
+                                    "#36T2": 3600,
+                                    "#36T3": 3840,
+                                    "#36T4": 3840,
+                                    "#36T5": 4114,
+                                    "#36T6": 4114,
+                                    "#36T7": 4547,
+                                    "#36T8": 4547,
+                                    "#36T9": 5236,
+                                    "#36T10": 5236,
+                                    "#36T11": 6400,
+                                    "#37N0": "Spruce Log",
+                                    "#37N1": "Enchanted Spruce Log",
+                                    "#37T1": 3600,
+                                    "#37T2": 3600,
+                                    "#37T3": 3840,
+                                    "#37T4": 3840,
+                                    "#37T5": 4114,
+                                    "#37T6": 4114,
+                                    "#37T7": 4547,
+                                    "#37T8": 4547,
+                                    "#37T9": 5236,
+                                    "#37T10": 5236,
+                                    "#37T11": 6400,
+                                    "#38N0": "Birch Log",
+                                    "#38N1": "Enchanted Birch Log",
+                                    "#38T1": 3600,
+                                    "#38T2": 3600,
+                                    "#38T3": 3840,
+                                    "#38T4": 3840,
+                                    "#38T5": 4114,
+                                    "#38T6": 4114,
+                                    "#38T7": 4547,
+                                    "#38T8": 4547,
+                                    "#38T9": 5236,
+                                    "#38T10": 5236,
+                                    "#38T11": 6400,
+                                    "#39N0": "Dark Oak Log",
+                                    "#39N1": "Enchanted Dark Oak Log",
+                                    "#39T1": 3600,
+                                    "#39T2": 3600,
+                                    "#39T3": 3840,
+                                    "#39T4": 3840,
+                                    "#39T5": 4114,
+                                    "#39T6": 4114,
+                                    "#39T7": 4547,
+                                    "#39T8": 4547,
+                                    "#39T9": 5236,
+                                    "#39T10": 5236,
+                                    "#39T11": 6400,
+                                    "#40N0": "Acacia Log",
+                                    "#40N1": "Enchanted Acacia Log",
+                                    "#40T1": 3600,
+                                    "#40T2": 3600,
+                                    "#40T3": 3840,
+                                    "#40T4": 3840,
+                                    "#40T5": 4114,
+                                    "#40T6": 4114,
+                                    "#40T7": 4547,
+                                    "#40T8": 4547,
+                                    "#40T9": 5236,
+                                    "#40T10": 5236,
+                                    "#40T11": 6400,
+                                    "#41N0": "Jungle Log",
+                                    "#41N1": "Enchanted Jungle Log",
+                                    "#41T1": 3600,
+                                    "#41T2": 3600,
+                                    "#41T3": 3840,
+                                    "#41T4": 3840,
+                                    "#41T5": 4114,
+                                    "#41T6": 4114,
+                                    "#41T7": 4547,
+                                    "#41T8": 4547,
+                                    "#41T9": 5236,
+                                    "#41T10": 5236,
+                                    "#41T11": 6400,
+                                    "#42N0": "Bamboo",
+                                    "#42N1": "Enchanted Bamboo",
+                                    "#42T1": 9000,
+                                    "#42T2": 9000,
+                                    "#42T3": 9600,
+                                    "#42T4": 9600,
+                                    "#42T5": 10285,
+                                    "#42T6": 10285,
+                                    "#42T7": 11368,
+                                    "#42T8": 11368,
+                                    "#42T9": 13091,
+                                    "#42T10": 16000,
+                                    "#42T11": 18000
+                                 },
                                  "bindings": [
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "minion_tier_slider",
+                                       "source_property_name": "((#slider_value > 10) * 10 + (#slider_value > 20) * 10 + 1)",
+                                       "target_property_name": "#n1"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "minion_tier_slider",
+                                       "source_property_name": "(#slider_value - #n1)",
+                                       "target_property_name": "#n2"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "((#n2 > 0) * 1 + (#n2 > 1) * 1 + (#n2 > 2) * 1 + (#n2 > 3) * 1 + (#n2 > 4) * 1 + (#n2 > 5) * 1 + (#n2 > 6) * 1 + (#n2 > 7) * 1 + (#n2 > 8) * 1 + (#n2 > 9) * 1 + #n1)",
+                                       "target_property_name": "#tier"
+                                    },
                                     {
                                        "binding_type": "view",
                                        "source_control_name": "wheat_collection",
@@ -440,13 +1586,338 @@
                                     },
                                     {
                                        "binding_type": "view",
-                                       "source_control_name": "minion_tier_slider",
-                                       "source_property_name": "(#slider_value  * 1 + 1)",
-                                       "target_property_name": "#tier"
+                                       "source_control_name": "carrot_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#carrot"
                                     },
                                     {
                                        "binding_type": "view",
-                                       "source_property_name": "('§r' + (#wheat * ((((#tier = 1) * 1) * $1twheat) + (((#tier = 2) * 1) * $2twheat) + (((#tier = 3) * 1) * $3twheat))))",
+                                       "source_control_name": "potato_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#potato"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "pumpkin_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#pumpkin"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "melon_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#melon"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "mushroom_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#mushroom"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "cocoa_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#cocoa"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "sugar_cane_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#sugar_cane"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "chicken_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#chicken"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "cow_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#cow"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "pig_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#pig"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "sheep_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#sheep"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "cactus_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#cactus"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "beetroot_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#beetroot"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "rabbit_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#rabbit"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "duck_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#duck"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "cobblestone_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#cobblestone"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "coal_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#coal_collection"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "iron_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#iron"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "gold_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#gold"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "diamond_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#diamond"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "lapis_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#lapis"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "emerald_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#emerald"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "redstone_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#redstone"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "obsidian_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#obsidian"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "ice_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#ice"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "zombie_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#zombie"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "skeleton_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#skeleton"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "spider_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#spider"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "cave_spider_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#cave_spider"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "creeper_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#creeper"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "slime_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#slime"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "blaze_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#blaze"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "magma_cube_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#magma_cube"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "revenant_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#revenant"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "oak_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#oak"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "spruce_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#spruce"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "birch_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#birch"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "dark_oak_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#dark_oak"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "acacia_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#acacia"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "jungle_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#jungle"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "bamboo_collection",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#bamboo"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "(0 + (#wheat * 1) + (#carrot * 2) + (#potato * 3) + (#pumpkin * 4) + (#melon * 5) + (#mushroom * 6) + (#cocoa * 7) + (#sugar_cane * 8) + (#chicken * 9) + (#cow * 10) + (#pig * 11) + (#sheep * 12) + (#cactus * 13) + (#beetroot * 14) + (#rabbit * 15) + (#duck * 16) + (#cobblestone * 17) + (#coal_collection * 18) + (#iron * 19) + (#gold * 20) + (#diamond * 21) + (#lapis * 22) + (#emerald * 23) + (#redstone * 24) + (#obsidian * 25) + (#ice * 26) + (#zombie * 27) + (#skeleton * 28) + (#spider * 29) + (#cave_spider * 30) + (#creeper * 31) + (#slime * 32) + (#blaze * 33) + (#magma_cube * 34) + (#revenant * 35) + (#oak * 36) + (#spruce * 37) + (#birch * 38) + (#dark_oak * 39) + (#acacia * 40) + (#jungle * 41) + (#bamboo * 42))",
+                                       "target_property_name": "#identifier"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "super_compactor",
+                                       "source_property_name": "(#toggle_state * 1)",
+                                       "target_property_name": "#compactor_enabled"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "(#compactor_enabled * 127 + 1)",
+                                       "target_property_name": "#compactor_multiplier"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "no_fuel_fuel",
+                                       "source_property_name": "((not #toggle_state) * 1)",
+                                       "target_property_name": "#no_fuel"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "coal_fuel",
+                                       "source_property_name": "(#toggle_state * 5)",
+                                       "target_property_name": "#coal"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "coal_block_fuel",
+                                       "source_property_name": "(#toggle_state * 5)",
+                                       "target_property_name": "#coal_block"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "enchanted_bread_fuel",
+                                       "source_property_name": "(#toggle_state * 5)",
+                                       "target_property_name": "#enchanted_bread"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "enchanted_coal_fuel",
+                                       "source_property_name": "(#toggle_state * 10)",
+                                       "target_property_name": "#enchanted_coal"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "enchanted_charcoal_fuel",
+                                       "source_property_name": "(#toggle_state * 20)",
+                                       "target_property_name": "#enchanted_charcoal"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "enchanted_lava_bucket_fuel",
+                                       "source_property_name": "(#toggle_state * 25)",
+                                       "target_property_name": "#enchanted_lava_bucket"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "hamster_wheel_fuel",
+                                       "source_property_name": "(#toggle_state * 40)",
+                                       "target_property_name": "#hamster_wheel"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_control_name": "foul_flesh_fuel",
+                                       "source_property_name": "(#toggle_state * 80)",
+                                       "target_property_name": "#foul_flesh"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "(100 + #no_fuel + #coal + #coal_block + #enchanted_bread + #enchanted_coal + #enchanted_charcoal + #enchanted_lava_bucket + #hamster_wheel + #foul_flesh)",
+                                       "target_property_name": "#fuel_multiplier"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "((('§#' + #identifier + 'T' + #tier) - '§') * #fuel_multiplier / 100 / #compactor_multiplier)",
+                                       "target_property_name": "#materials"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "(('§#' + #identifier + 'N' + #compactor_enabled) - '§')",
+                                       "target_property_name": "#name"
+                                    },
+                                    {
+                                       "binding_type": "view",
+                                       "source_property_name": "('Production for 24 hours:\n' + #materials + 'x ' + #name)",
                                        "target_property_name": "#text"
                                     }
                                  ]
@@ -458,26 +1929,6 @@
                ]
             }
          }
-      ]
-   },
-   "minion_result_label": {
-      "type": "label",
-      "$first_tier_amount": 0,
-      "$second_tier_amount": 0,
-      "$third_tier_amount": 0,
-      "$fourth_tier_amount": 0,
-      "$fith_tier_amount": 0,
-      "$sixth_tier_amount": 0,
-      "$seventh_tier_amount": 0,
-      "$eighth_tier_amount": 0,
-      "$nineth_tier_amount": 0,
-      "$tenth_tier_amount": 0,
-      "$eleventh_tier_amount": 0,
-      "bindings": [
-         // {
-         //    "binding_type": "view",
-         //    "source_property_name": "()"
-         // }
       ]
    },
    "tab_template": {

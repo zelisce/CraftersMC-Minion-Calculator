@@ -7,7 +7,7 @@
     },
     "header": {
         "name": "CraftersMC Utils [RP]",
-        "description": "» This pack is not affiliated with CraftersMC.\n» This pack includes:\n\n» Minion Calculator",
+        "description": "» This pack is not affiliated with CraftersMC.\n» This pack includes:\n- Minion Calculator\n\n» Made by zelisce\n\n» Special thanks to EchoRif and Peawies!",
         "uuid": "2792ef4f-a7ed-460f-b454-de17c93425ee",
         "min_engine_version": [
             1,
@@ -15,8 +15,8 @@
             100
         ],
         "version": [
-            0,
             1,
+            0,
             0
         ]
     },

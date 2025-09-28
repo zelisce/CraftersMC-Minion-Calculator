@@ -7,10 +7,10 @@
                 "value": [
                     {
                         "utils_screen@utils_screen.main": {}
-                    },
-                    {
-                        "notation_screen_ons_d@notes.on_screen_display_screen": {}
                     }
+                    // {
+                    //     "notation_screen_ons_d@notes.on_screen_display_screen": {}
+                    // }
                 ]
             }
         ]
