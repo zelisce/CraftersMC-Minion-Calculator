@@ -10,7 +10,7 @@
 
 <div align="left">
 
-<h2>📖 Introduction</h1>
+<h2>📖 Introduction</h2>
 Were you ever tired of searching through the discord or web for the tools you need?<br>
 Do you maybe use a phone and cannot use your tools without leaving your game?<br><br>
 CraftersMC Utils is a resource pack that includes tools that aim to enhance your CraftersMC gameplay without the need to leave the server at all!<br><br>
@@ -20,11 +20,17 @@ If you found this project helpful and you liked it, please leave a star, it woul
 Install the latest `.mcpack` version from <a href="https://github.com/zelisce/CraftersMC-Minion-Calculator/releases/latest">releases</a>.<br><br>
 After installing the latest version, open the file using Minecraft. It will import itself automatically afterwards.
 
-<h2>🎯 Features</h1>
-• Minion Calculator<br><br>
+<h2>🎯 Features</h2>
+» Minion Calculator<br><br>
 <img src="assets/minion_calculator_example_1.png" alt="Minion Calculator Example" width="500">
 
-<h2>🙌 Credits</h1>
+<h2>🙌 Credits</h2>
 Special thanks to:<br><br>
 » Peawies, for his idea and minion production data!<br>
 » And <a href="https://github.com/ya-rifat">@ya-rifat</a> for his brilliant idea on how to efficiently code the Minion Calculator!
+
+<h2>📞 Contact</h2>
+Ways to contact me or our community:<br><br>
+» <a href="mailto:contact@zelisce.dev">contact@zelisce.dev</a><br>
+» Our discord post: <a href="https://discord.com/channels/935155928649572352/1416595450026528852">here</a><br>
+» Or you can just dm me on discord: `zelisce`
