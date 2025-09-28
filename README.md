@@ -17,8 +17,9 @@ CraftersMC Utils is a resource pack that includes tools that aim to enhance your
 If you found this project helpful and you liked it, please leave a star, it would mean a ton!
 
 <h2>🛠️ Download</h2>
-Install the latest `.mcpack` version from <a href="https://github.com/zelisce/CraftersMC-Minion-Calculator/releases/latest">releases</a>.<br><br>
-After installing the latest version, open the file using Minecraft. It will import itself automatically afterwards.
+Install the latest <code>.mcpack</code> version from <a href="https://github.com/zelisce/CraftersMC-Minion-Calculator/releases/latest">releases</a>.<br><br>
+After installing the latest version, open the file using Minecraft. It will import itself automatically afterwards.<br><br>
+The <code>.zip</code> version was meant for easier development or distribution among developers. No need to install that version unless you know what you're doing!
 
 <h2>🎯 Features</h2>
 » Minion Calculator<br><br>
@@ -33,4 +34,4 @@ Special thanks to:<br><br>
 Ways to contact me or our community:<br><br>
 » <a href="mailto:contact@zelisce.dev">contact@zelisce.dev</a><br>
 » Our discord post: <a href="https://discord.com/channels/935155928649572352/1416595450026528852">here</a><br>
-» Or you can just dm me on discord: `zelisce`
+» Or you can just dm me on discord: <code>zelisce</code>
